@@ -1,0 +1,6 @@
+#Automatically creates a checkpoint on a Hyper-V Server
+$VmName = "SERVERNAME"
+$Date = Get-Date -Format "MM/dd/yyyy HH:mm"
+$CheckpointName = 'AutoCheckpoint ' + $Date
+
+Get-VM -Name $VmName | checkpoint-VM -SnapshotName $CheckpointName
